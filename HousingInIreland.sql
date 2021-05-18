@@ -50,6 +50,28 @@ VALUES
 
 
 
+INSERT INTO HousingByCountyAndElectrolDivision2011(ElectoralCode,ElectoralDivision, County, Bungalow_2011, Flat_2011)
+VALUES
+('Aariz','Gould','Nurse','(877) 455-7519',€40000.00),
+('Sioned','Jones','Nurse', '(627) 416-9842',€31000.00),
+('Kellan','Brown','Vet','(244) 829-4726',€31000.00),
+('Micah','Rawlings','Nurse','(839) 261-9816',€25000.00),
+('Hadi','Harrington','Vet','(694) 621-6461',€25000.00),
+('Amos','Wilson','receptionist','(826) 639-8108',€21000.00),
+('Lola','Strickland','custodian','(338) 978-9554',€21000.00);
+
+
+
+
+INSERT INTO AverageHousePrices(FirstName,LastName, Position, ContactNumber, Salary)
+VALUES
+('Aariz','Gould','Nurse','(877) 455-7519',€40000.00),
+('Sioned','Jones','Nurse', '(627) 416-9842',€31000.00),
+('Kellan','Brown','Vet','(244) 829-4726',€31000.00),
+('Micah','Rawlings','Nurse','(839) 261-9816',€25000.00),
+('Hadi','Harrington','Vet','(694) 621-6461',€25000.00),
+('Amos','Wilson','receptionist','(826) 639-8108',€21000.00),
+('Lola','Strickland','custodian','(338) 978-9554',€21000.00);
 Go 
 INSERT INTO PetOwners( FirstName,LastName, ContactNumber)
 VALUES 
