@@ -1,4 +1,4 @@
-USE master; --Any database that is not the JamesVet database. 
+USE master; --Any database  
 DROP DATABASE HousingInIreland; -- So we can add a new database of that name.
 
 CREATE DATABASE HousingInIreland;
@@ -28,13 +28,14 @@ CREATE TABLE tblAverageHousePrices(
 );
 
 
-CREATE TABLE tblFuelConsumption(
-   /* PetsID INT IDENTITY(100,1)   PRIMARY KEY,
-    PetName varchar(30) NOT NULL,
-    Species varchar(30)NOT NULL,
-    DOB DATE NOT NULL,
-	PetOwnersID INT FOREIGN KEY REFERENCES PetOwners(PetOwnersID),
-	*/
+
+CREATE TABLE tblHouseLoansApprovedAndPaid(
+/* */
+CensusYear INT IDENTITY(1970,1) Primary Key,
+HouseType varchar(20),
+ValueOfHouse INT,
+
+
 
 
 );
@@ -46,10 +47,29 @@ NumberOfUnits INT NOT NULL,
 VacancyRate INT NOT NULL
 
 );
-CREATE TABLE  tblNewHouseRegistrations()
+CREATE TABLE  tblNewHouseRegistrations(
+County varchar(20) Primary Key,
+YearQuarter INT NOT NULL,
+NumberOfUnits INT NOT NULL
+)
 
+BULK INSERT tblHouseLoansApprovedAndPaid
+FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\house_loans_approved_and_paid.csv'
+WITH (
+		FIRSTROW=1,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '\n',
+		BATCHSIZE=377
+);
+BULK INSERT tblNewHouseRegistrations
+FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main (1)\ETB_Database_Fundamentals-main\new_house_registrations.csv'
 
-
+WITH (
+		FIRSTROW=1,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '\n',
+		BATCHSIZE=2215
+);
 
 
 
@@ -65,8 +85,6 @@ WITH (
 
 
 
-
-
 BULK INSERT tblAverageHousePrices
 FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\average_house_prices.csv'
 WITH (
@@ -77,15 +95,6 @@ WITH (
 );
 
  
-Go 
-INSERT INTO tblFuelConsumption(--PetName,Species, DOB, PetOwnersID--)
-VALUES
-/*
-('Max','Dog','2017-01-20',100),
-('Jack', 'Dog' ,'2015-06-18',100),   
-('Buddy', 'Dog','2015-06-18',103),
-('Oscar' , 'Cat', '2011-12-01',101);
-*/
 
 
 Go 
