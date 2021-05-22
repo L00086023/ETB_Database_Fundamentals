@@ -1,4 +1,4 @@
-USE master; --Any database  
+USE master; --Any database  that is not the HousingInIreland database
 DROP DATABASE HousingInIreland; -- So we can add a new database of that name.
 
 CREATE DATABASE HousingInIreland;
@@ -30,10 +30,12 @@ CREATE TABLE tblAverageHousePrices(
 
 
 CREATE TABLE tblHouseLoansApprovedAndPaid(
-/* */
+--CensusYear  varchar(4) Primary Key,
+--CensusYear INT Primary Key,
 CensusYear INT IDENTITY(1970,1) Primary Key,
 HouseType varchar(20),
 ValueOfHouse INT,
+
 
 
 
@@ -180,7 +182,7 @@ WHERE CountyName = 'Donegal';
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
 ORDER BY HouseValue ASC;
-
+/*
 --list all columns in Pets
 SELECT * FROM Pets;
 
@@ -331,3 +333,4 @@ MedicationID   int IDENTITY(1,1) NOT NULL Primary Key,
 Medication nvarchar NOT NULL
 );
 SELECT * FROM  sys.tables;
+*/
