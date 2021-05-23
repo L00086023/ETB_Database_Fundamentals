@@ -43,11 +43,12 @@ ValueOfHouse MONEY,
 
 );
 CREATE TABLE tblHousingData(
-CensusYear INT Primary Key,
-CountyCode varchar(2) NOT NULL,
+CensusYear INT  NOT NULL,
+CountyCode varchar(2),
 CountyName varchar(30) NOT NULL,
 NumberOfUnits INT NOT NULL,
 VacancyRate DECIMAL NOT NULL
+CONSTRAINT PK_HousingData PRIMARY KEY(CensusYear,NumberOfUnits)
 
 );
 CREATE TABLE  tblNewHouseRegistrations(
