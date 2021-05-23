@@ -128,10 +128,17 @@ WITH (
 
 
 
---List all columns in staff
+--List all columns in tblHousingData;
+SELECT CensusYear,NumberOfUnits, VacancyRate 
+FROM tblHousingData;
+
+
+
+/*
 SELECT CensusYear,NumberOfUnits, VacancyRate 
 FROM tblHousingData
 WHERE CountyName = 'Donegal';
+*/
 
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
