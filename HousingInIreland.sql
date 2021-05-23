@@ -18,11 +18,12 @@ CREATE TABLE tblHousingByCountyAndElectrolDivision2011(
 );
 
 CREATE TABLE tblAverageHousePrices(
-    AverageHousePriceTableID INT IDENTITY(1,1)   PRIMARY KEY,
-   HouseType varchar(20)NOT NULL,
-   SurveyYear INT NOT NULL,
-    Area varchar(30) NOT NULL,
- HouseValue INT NOT NULL,
+SurveyYear INT IDENTITY(2000,1) PRIMARY KEY, 
+Area varchar(30) NOT NULL,    
+HouseValue INT NOT NULL,
+ 
+   
+    
  
    
 );
@@ -34,7 +35,7 @@ CREATE TABLE tblHouseLoansApprovedAndPaid(
 --CensusYear INT Primary Key,
 CensusYear INT IDENTITY(1970,1) Primary Key,
 HouseType varchar(20),
-ValueOfHouse INT,
+ValueOfHouse MONEY,
 
 
 
@@ -46,39 +47,45 @@ CensusYear INT Primary Key,
 CountyCode varchar(2) NOT NULL,
 CountyName varchar(30) NOT NULL,
 NumberOfUnits INT NOT NULL,
-VacancyRate INT NOT NULL
+VacancyRate DECIMAL NOT NULL
 
 );
 CREATE TABLE  tblNewHouseRegistrations(
+
+YearQuarter varchar(10) NOT NULL,
 County varchar(20) Primary Key,
-YearQuarter INT NOT NULL,
+
+
 NumberOfUnits INT NOT NULL
 )
 
 BULK INSERT tblHouseLoansApprovedAndPaid
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\house_loans_approved_and_paid.csv'
 WITH (
-		FIRSTROW=1,
+		FIRSTROW=2,
 		FIELDTERMINATOR = ',',
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=377
 );
+/*
 BULK INSERT tblNewHouseRegistrations
 FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main (1)\ETB_Database_Fundamentals-main\new_house_registrations.csv'
 
 WITH (
-		FIRSTROW=1,
+		FIRSTROW=2,
 		FIELDTERMINATOR = ',',
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=2215
 );
 
 
-
+*/
 BULK INSERT  tblHousingByCountyAndElectrolDivision2011
-FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\theme_6_2_electoral_divisions.csv'
+--FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\theme_6_2_electoral_divisions.csv'
+FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\theme_6_2_electoral_divisions.csv'
+
 WITH (
-		FIRSTROW=1,
+		FIRSTROW=2,
 		FIELDTERMINATOR = ',',
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=97
@@ -88,9 +95,10 @@ WITH (
 
 
 BULK INSERT tblAverageHousePrices
-FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\average_house_prices.csv'
+--FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\average_house_prices.csv'
+FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\average_house_prices.csv'
 WITH (
-		FIRSTROW=1,
+		FIRSTROW=2,
 		FIELDTERMINATOR = ',',
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=119
@@ -100,78 +108,23 @@ WITH (
 
 
 Go 
-INSERT INTO tblHousingData(CensusYear,CountyCode, CountyName,VacancyRate)
-VALUES
-(2002	,'IE',	'State',	1460053,	9.8),
-(2002,	'CW',	'Carlow',	16421,	7.8),
-(2002,	'DC',	'Dublin City',	199463,	6),
-(2002,	'DR',	'Dún Laoghaire-Rathdown',	69444,	4.3),
-(2002,	'FL',	'Fingal',	65432,	4.9),
-(2002,	'SD',	'South Dublin',	76666,	2.8),
-(2002,	'KE',	'Kildare',	54589,	5.9),
-(2002,	'KK',	'Kilkenny',	27811,	6.6	),
-(2002,	'LS',	'Laois',	20561,	9.1),	
-(2002,	'LD',	'Longford',	12060,	12.8),	
-(2002,	'LH',	'Louth',	37441,	8.2	),
-(2002,	'MH',	'Meath',	44972,	6.4),	
-(2002,	'OY',	'Offaly',	22071,	7.7),	
-(2002,	'WH',	'Westmeath',26484,	9.7),	
-(2002,	'WX',	'Wexford',	45334,	16.7),	
-(2002,	'WW',	'Wicklow',	40214,	7.2	),
-(2002,	'CE',	'Clare',	41513,	16.1),	
-(2002,	'CC',	'Cork City',46801,	6),	
-(2002,	'CK',	'Cork County',	121983,	12),	
-(2002,	'KY',	'Kerry',	54331,	18.4),	
-(2002,	'LK',	'LimerickCityAndCounty',	63950,	8.1	),
-(2002,	'TY',	'Tipperary',	51927,	8.6),	
-(2002,	'WD',	'WaterfordCityAndCounty',	39259,	11.4),	
-(2002,	'GC',	'Galway City',	23792,	7.5),	
-(2002,	'LM',	'Leitrim',	11858,	21.7),	
-(2002,	'MO',	'Mayo',	49194,	18.4),	
-(2002,	'RN',	'Roscommon',	21944,	15.5),	
-(2002,	'SO',	'Sligo'	,23464,	13.8),	
-(2002,	'CN',	'Cavan'	,21165,	12.9),	
-(2002,	'DL',	'Donegal',	57395,	21),	
-(2002,	'MN',	'Monaghan',	18411,	8.1),	
-(2006,	'IE',	'State',	1769613,	15)	,
-(2006,	'CW',	'Carlow',20135,	12.3),	
-(2006,	'DC',	'Dublin City',	223098,	11.7),	
-(2006,	'DR',	'Dún Laoghaire-Rathdown',	77508,	8.9	),
-(2006,	'FL',	'Fingal',	89909,	8.8),	
-(2006,	'SD',	'South Dublin',	87484,	6.2	),
-(2006,	'KE',	'Kildare',	68840,	9.9),	
-(2006,	'KK',	'Kilkenny',	34353,	12),	
-(2006,	'LS',	'Laois',	27079,	15.7),	
-(2006,	'LD',	'Longford',	15868,	22.2),	
-(2006,	'LH',   'Louth',	45488,	13.4),	
-(2006,	'MH',	'Meath',	61257,	10.6),	
-(2006,	'OY',	'Offaly',	27591,	12.9),	
-(2006,	'WH',	'Westmeath',	32817,	15.3),	
-(2006,	'WX',	'Wexford',	58970,	21.5),	
-(2006,	'WW',	'Wicklow',	49088,	11.4),	
-(2006,	'CE',	'Clare',	48834,	20.1),	
-(2006,	'CC',	'Cork City',	51441,	12),	
-(2006,	'CK',	'Cork County',	150659,	16.5),	
-(2006,	'KY',	'Kerry',	65913,	24.8)	,
-(2006,	'LK',	'LimerickCityAndCounty',	75742,	12.6),	
-(2006,	'TY',	'Tipperary',	61509,	13)	,
-(2006,	'WD','Waterford City and County',	47541,	16.8),	
-(2006,	'GC',	'Galway City',	30589,	13)	,
-(2006,	'GY',	'Galway County',	67737,	20.1),	
-(2006,	'LM',	'Leitrim',	15282,	29.3),	
-(2006,	'MO',	'Mayo',	58717,	24.4),	
-(2006,	'RN',	'Roscommon',	26979,	21.8),	
-(2006,	'SO',	'Sligo'	,28751,	23.1),
-(2006,	'CN',	'Cavan',	28250,	21.2),	
-(2006,	'DL',	'Donegal',	70526,	27),	
-(2006,	'MN','State',	1994845,	14.5)	
+--INSERT INTO tblHousingData(CensusYear,CountyCode,NumberOfUnits, CountyName,VacancyRate)
+BULK INSERT  tblHousingData
+FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\HousingData1.csv'
+WITH (
+		FIRSTROW=2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '\n',
+		BATCHSIZE=513
+);
+	
 
 
-)
-)
 
 
-)
+
+
+
 
 
 --List all columns in staff

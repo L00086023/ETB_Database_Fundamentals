@@ -1,0 +1,321 @@
+CensusYear,County Code,County and City,NUMBER OF UNITS,Vacancy Rate
+2002,IE,State,1460053,9.8
+2002,CW,Carlow,16421,7.8
+2002,DC,Dublin City,199463,6
+2002,DR,Dún Laoghaire-Rathdown,69444,4.3
+2002,FL,Fingal,65432,4.9
+2002,SD,South Dublin,76666,2.8
+2002,KE,Kildare,54589,5.9
+2002,KK,Kilkenny,27811,6.6
+2002,LS,Laois,20561,9.1
+2002,LD,Longford,12060,12.8
+2002,LH,Louth,37441,8.2
+2002,MH,Meath,44972,6.4
+2002,OY,Offaly,22071,7.7
+2002,WH,Westmeath,26484,9.7
+2002,WX,Wexford,45334,16.7
+2002,WW,Wicklow,40214,7.2
+2002,CE,Clare,41513,16.1
+2002,CC,Cork City,46801,6
+2002,CK,Cork County,121983,12
+2002,KY,Kerry,54331,18.4
+2002,LK,Limerick City and County,63950,8.1
+2002,TY,Tipperary,51927,8.6
+2002,WD,Waterford City and County,39259,11.4
+2002,GC,Galway City,23792,7.5
+2002,GY,Galway County,54103,14.8
+2002,LM,Leitrim,11858,21.7
+2002,MO,Mayo,49194,18.4
+2002,RN,Roscommon,21944,15.5
+2002,SO,Sligo,23464,13.8
+2002,CN,Cavan,21165,12.9
+2002,DL,Donegal,57395,21
+2002,MN,Monaghan,18411,8.1
+2006,IE,State,1769613,15
+2006,CW,Carlow,20135,12.3
+2006,DC,Dublin City,223098,11.7
+2006,DR,Dún Laoghaire-Rathdown,77508,8.9
+2006,FL,Fingal,89909,8.8
+2006,SD,South Dublin,87484,6.2
+2006,KE,Kildare,68840,9.9
+2006,KK,Kilkenny,34353,12
+2006,LS,Laois,27079,15.7
+2006,LD,Longford,15868,22.2
+2006,LH,Louth,45488,13.4
+2006,MH,Meath,61257,10.6
+2006,OY,Offaly,27591,12.9
+2006,WH,Westmeath,32817,15.3
+2006,WX,Wexford,58970,21.5
+2006,WW,Wicklow,49088,11.4
+2006,CE,Clare,48834,20.1
+2006,CC,Cork City,51441,12
+2006,CK,Cork County,150659,16.5
+2006,KY,Kerry,65913,24.8
+2006,LK,Limerick City and County,75742,12.6
+2006,TY,Tipperary,61509,13
+2006,WD,Waterford City and County,47541,16.8
+2006,GC,Galway City,30589,13
+2006,GY,Galway County,67737,20.1
+2006,LM,Leitrim,15282,29.3
+2006,MO,Mayo,58717,24.4
+2006,RN,Roscommon,26979,21.8
+2006,SO,Sligo,28751,23.1
+2006,CN,Cavan,28250,21.2
+2006,DL,Donegal,70526,27
+2006,MN,Monaghan,21658,12.8
+2011,IE,State,1994845,14.5
+2011,CW,Carlow,23165,13.8
+2011,DC,Dublin City,241678,10.2
+2011,DR,Dún Laoghaire-Rathdown,85896,7.7
+2011,FL,Fingal,102793,7
+2011,SD,South Dublin,97298,5.4
+2011,KE,Kildare,78794,8
+2011,KK,Kilkenny,39005,11.9
+2011,LS,Laois,32664,12.5
+2011,LD,Longford,18823,21.6
+2011,LH,Louth,51186,12.2
+2011,MH,Meath,69697,8.9
+2011,OY,Offaly,30750,11.8
+2011,WH,Westmeath,36659,13.4
+2011,WX,Wexford,68143,21
+2011,WW,Wicklow,54351,9.9
+2011,CE,Clare,55616,21.2
+2011,CC,Cork City,55633,11.1
+2011,CK,Cork County,172042,15.8
+2011,KY,Kerry,74747,26.4
+2011,LK,Limerick City and County,82156,12.3
+2011,TY,Tipperary,68974,13.5
+2011,WD,Waterford City and County,52364,16.4
+2011,GC,Galway City,33655,11.2
+2011,GY,Galway County,77522,19.4
+2011,LM,Leitrim,18128,30.5
+2011,MO,Mayo,65792,24.7
+2011,RN,Roscommon,31585,23.2
+2011,SO,Sligo,33044,22.2
+2011,CN,Cavan,33711,21.6
+2011,DL,Donegal,83918,28.6
+2011,MN,Monaghan,25056,13.6
+2016,IE,State,2003645,12.3
+2016,CW,Carlow,23274,9.3
+2016,DC,Dublin City,240553,8.1
+2016,DR,Dún Laoghaire-Rathdown,86962,5.5
+2016,FL,Fingal,104851,5
+2016,SD,South Dublin,98387,3.6
+2016,KE,Kildare,80158,5.9
+2016,KK,Kilkenny,39226,9
+2016,LS,Laois,32794,9.6
+2016,LD,Longford,18591,16.7
+2016,LH,Louth,51399,9.2
+2016,MH,Meath,70649,6.9
+2016,OY,Offaly,30740,9.4
+2016,WH,Westmeath,36890,10.9
+2016,WX,Wexford,68206,18.4
+2016,WW,Wicklow,54986,8.1
+2016,CE,Clare,55779,19.6
+2016,CC,Cork City,55760,7.8
+2016,CK,Cork County,173735,13.2
+2016,KY,Kerry,74094,24
+2016,LK,Limerick City and County,82112,10
+2016,TY,Tipperary,69106,12.3
+2016,WD,Waterford City and County,52491,14
+2016,GC,Galway City,33847,9.4
+2016,GY,Galway County,78207,17.2
+2016,LM,Leitrim,18051,29
+2016,MO,Mayo,65921,23.4
+2016,RN,Roscommon,31285,20.9
+2016,SO,Sligo,32764,20.1
+2016,CN,Cavan,33585,17.5
+2016,DL,Donegal,83931,27.4
+2016,MN,Monaghan,25311,12.4
+1991,IE,State,105142,9.1
+1991,CW,Carlow,823,6.7
+1991,DC,Dublin City,9670,5.5
+1991,DR,Dún Laoghaire-Rathdown,2447,4
+1991,FL,Fingal,1682,3.9
+1991,SD,South Dublin,1490,2.6
+1991,KE,Kildare,1812,5.1
+1991,KK,Kilkenny,1763,7.7
+1991,LS,Laois,1413,8.8
+1991,LD,Longford,1453,13.7
+1991,LH,Louth,1983,7
+1991,MH,Meath,2333,7.4
+1991,OY,Offaly,1353,7.5
+1991,WH,Westmeath,1766,8.8
+1991,WX,Wexford,3708,11.2
+1991,WW,Wicklow,2958,9.3
+1991,CE,Clare,4630,14.6
+1991,CC,Cork City,2978,7
+1991,CK,Cork County,11350,12.1
+1991,KY,Kerry,7716,17.3
+1991,LK,Limerick City and County,4248,8.2
+1991,TY,Tipperary,4036,9.3
+1991,WD,Waterford City and County,2929,9.7
+1991,GC,Galway City,1103,6.8
+1991,GY,Galway County,5667,13.3
+1991,LM,Leitrim,1820,17.8
+1991,MO,Mayo,6078,15.4
+1991,RN,Roscommon,2428,13.1
+1991,SO,Sligo,2576,13.3
+1991,CN,Cavan,2170,12
+1991,DL,Donegal,7245,16.3
+1991,MN,Monaghan,1514,9.2
+1996,IE,State,105250,8.4
+1996,CW,Carlow,830,6.2
+1996,DC,Dublin City,10759,5.7
+1996,DR,Dún Laoghaire-Rathdown,2076,3.2
+1996,FL,Fingal,1702,3.4
+1996,SD,South Dublin,1407,2.2
+1996,KE,Kildare,1480,3.6
+1996,KK,Kilkenny,1558,6.4
+1996,LS,Laois,1370,7.9
+1996,LD,Longford,1161,10.8
+1996,LH,Louth,2249,6.5
+1996,MH,Meath,1882,6.1
+1996,OY,Offaly,1317,6.9
+1996,WH,Westmeath,1746,8.1
+1996,WX,Wexford,3763,10.6
+1996,WW,Wicklow,2779,8
+1996,CE,Clare,4390,12.8
+1996,CC,Cork City,2594,5.7
+1996,CK,Cork County,11564,11.3
+1996,KY,Kerry,8365,17.3
+1996,LK,Limerick City and County,4415,7.9
+1996,TY,Tipperary,3632,8
+1996,WD,Waterford City and County,2990,9
+1996,GC,Galway City,1138,6
+1996,GY,Galway County,5683,12.5
+1996,LM,Leitrim,1954,18.6
+1996,MO,Mayo,6617,15.8
+1996,RN,Roscommon,2307,12
+1996,SO,Sligo,2561,12.4
+1996,CN,Cavan,2081,11.2
+1996,DL,Donegal,7373,15.6
+1996,MN,Monaghan,1507,8.9
+2002,IE,State,143418,9.8
+2002,CW,Carlow,1285,7.8
+2002,DC,Dublin City,12002,6
+2002,DR,Dún Laoghaire-Rathdown,2979,4.3
+2002,FL,Fingal,3212,4.9
+2002,SD,South Dublin,2126,2.8
+2002,KE,Kildare,3198,5.9
+2002,KK,Kilkenny,1833,6.6
+2002,LS,Laois,1864,9.1
+2002,LD,Longford,1548,12.8
+2002,LH,Louth,3053,8.2
+2002,MH,Meath,2895,6.4
+2002,OY,Offaly,1708,7.7
+2002,WH,Westmeath,2559,9.7
+2002,WX,Wexford,7578,16.7
+2002,WW,Wicklow,2905,7.2
+2002,CE,Clare,6676,16.1
+2002,CC,Cork City,2814,6
+2002,CK,Cork County,14694,12
+2002,KY,Kerry,10024,18.4
+2002,LK,Limerick City and County,5186,8.1
+2002,TY,Tipperary,4481,8.6
+2002,WD,Waterford City and County,4480,11.4
+2002,GC,Galway City,1791,7.5
+2002,GY,Galway County,7998,14.8
+2002,LM,Leitrim,2579,21.7
+2002,MO,Mayo,9053,18.4
+2002,RN,Roscommon,3395,15.5
+2002,SO,Sligo,3246,13.8
+2002,CN,Cavan,2720,12.9
+2002,DL,Donegal,12038,21
+2002,MN,Monaghan,1498,8.1
+2006,IE,State,266322,15
+2006,CW,Carlow,2475,12.3
+2006,DC,Dublin City,26092,11.7
+2006,DR,Dún Laoghaire-Rathdown,6928,8.9
+2006,FL,Fingal,7878,8.8
+2006,SD,South Dublin,5407,6.2
+2006,KE,Kildare,6838,9.9
+2006,KK,Kilkenny,4108,12
+2006,LS,Laois,4240,15.7
+2006,LD,Longford,3523,22.2
+2006,LH,Louth,6107,13.4
+2006,MH,Meath,6485,10.6
+2006,OY,Offaly,3550,12.9
+2006,WH,Westmeath,5015,15.3
+2006,WX,Wexford,12692,21.5
+2006,WW,Wicklow,5577,11.4
+2006,CE,Clare,9811,20.1
+2006,CC,Cork City,6195,12
+2006,CK,Cork County,24794,16.5
+2006,KY,Kerry,16366,24.8
+2006,LK,Limerick City and County,9560,12.6
+2006,TY,Tipperary,8005,13
+2006,WD,Waterford City and County,7999,16.8
+2006,GC,Galway City,3984,13
+2006,GY,Galway County,13583,20.1
+2006,LM,Leitrim,4473,29.3
+2006,MO,Mayo,14298,24.4
+2006,RN,Roscommon,5889,21.8
+2006,SO,Sligo,6648,23.1
+2006,CN,Cavan,5997,21.2
+2006,DL,Donegal,19043,27
+2006,MN,Monaghan,2762,12.8
+2011,IE,State,289451,14.5
+2011,CW,Carlow,3202,13.8
+2011,DC,Dublin City,24638,10.2
+2011,DR,Dún Laoghaire-Rathdown,6616,7.7
+2011,FL,Fingal,7204,7
+2011,SD,South Dublin,5249,5.4
+2011,KE,Kildare,6311,8
+2011,KK,Kilkenny,4624,11.9
+2011,LS,Laois,4087,12.5
+2011,LD,Longford,4075,21.6
+2011,LH,Louth,6232,12.2
+2011,MH,Meath,6173,8.9
+2011,OY,Offaly,3620,11.8
+2011,WH,Westmeath,4921,13.4
+2011,WX,Wexford,14329,21
+2011,WW,Wicklow,5377,9.9
+2011,CE,Clare,11782,21.2
+2011,CC,Cork City,6168,11.1
+2011,CK,Cork County,27161,15.8
+2011,KY,Kerry,19719,26.4
+2011,LK,Limerick City and County,10114,12.3
+2011,TY,Tipperary,9344,13.5
+2011,WD,Waterford City and County,8597,16.4
+2011,GC,Galway City,3755,11.2
+2011,GY,Galway County,15066,19.4
+2011,LM,Leitrim,5526,30.5
+2011,MO,Mayo,16230,24.7
+2011,RN,Roscommon,7332,23.2
+2011,SO,Sligo,7328,22.2
+2011,CN,Cavan,7277,21.6
+2011,DL,Donegal,23996,28.6
+2011,MN,Monaghan,3398,13.6
+2016,IE,State,245460,12.3
+2016,CW,Carlow,2162,9.3
+2016,DC,Dublin City,19446,8.1
+2016,DR,Dún Laoghaire-Rathdown,4788,5.5
+2016,FL,Fingal,5233,5
+2016,SD,South Dublin,3530,3.6
+2016,KE,Kildare,4712,5.9
+2016,KK,Kilkenny,3546,9
+2016,LS,Laois,3160,9.6
+2016,LD,Longford,3102,16.7
+2016,LH,Louth,4713,9.2
+2016,MH,Meath,4875,6.9
+2016,OY,Offaly,2884,9.4
+2016,WH,Westmeath,4009,10.9
+2016,WX,Wexford,12547,18.4
+2016,WW,Wicklow,4454,8.1
+2016,CE,Clare,10925,19.6
+2016,CC,Cork City,4362,7.8
+2016,CK,Cork County,22847,13.2
+2016,KY,Kerry,17747,24
+2016,LK,Limerick City and County,8184,10
+2016,TY,Tipperary,8502,12.3
+2016,WD,Waterford City and County,7336,14
+2016,GC,Galway City,3166,9.4
+2016,GY,Galway County,13440,17.2
+2016,LM,Leitrim,5226,29
+2016,MO,Mayo,15452,23.4
+2016,RN,Roscommon,6548,20.9
+2016,SO,Sligo,6571,20.1
+2016,CN,Cavan,5875,17.5
+2016,DL,Donegal,22992,27.4
+2016,MN,Monaghan,3126,12.4
