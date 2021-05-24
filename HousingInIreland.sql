@@ -18,9 +18,10 @@ CREATE TABLE tblHousingByCountyAndElectrolDivision2011(
 );
 
 CREATE TABLE tblAverageHousePrices(
-SurveyYear INT IDENTITY(2000,1) PRIMARY KEY, 
+SurveyYear INT NOT NULL,
 Area varchar(30) NOT NULL,    
 HouseValue INT NOT NULL,
+CONSTRAINT PK_AverageHousePrices PRIMARY KEY(SurveyYear,HouseValue)
  
    
     
@@ -31,15 +32,14 @@ HouseValue INT NOT NULL,
 
 
 CREATE TABLE tblHouseLoansApprovedAndPaid(
---CensusYear  varchar(4) Primary Key,
---CensusYear INT Primary Key,
-CensusYear INT IDENTITY(1970,1) Primary Key,
+
+
+CensusYear INT NOT NULL,
 HouseType varchar(20),
-ValueOfHouse MONEY,
+ValueOfHouse MONEY NOT NULL,
 
-
-
-
+ 
+CONSTRAINT PK_HouseLoansApprovedAndPaid PRIMARY KEY(CensusYear,ValueOfHouse)
 
 );
 CREATE TABLE tblHousingData(
@@ -54,10 +54,10 @@ CONSTRAINT PK_HousingData PRIMARY KEY(CensusYear,NumberOfUnits)
 CREATE TABLE  tblNewHouseRegistrations(
 
 YearQuarter varchar(10) NOT NULL,
-County varchar(20) Primary Key,
-
+County varchar(20) NOT NULL,
 
 NumberOfUnits INT NOT NULL
+CONSTRAINT PK_NewHouseRegistrations PRIMARY KEY(YearQuarter,County)
 )
 
 BULK INSERT tblHouseLoansApprovedAndPaid
@@ -68,7 +68,7 @@ WITH (
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=377
 );
-/*
+
 BULK INSERT tblNewHouseRegistrations
 FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main (1)\ETB_Database_Fundamentals-main\new_house_registrations.csv'
 
@@ -80,9 +80,7 @@ WITH (
 );
 
 
-*/
 BULK INSERT  tblHousingByCountyAndElectrolDivision2011
---FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\theme_6_2_electoral_divisions.csv'
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\theme_6_2_electoral_divisions.csv'
 
 WITH (
@@ -96,7 +94,6 @@ WITH (
 
 
 BULK INSERT tblAverageHousePrices
---FROM 'C:\Users\Client 9.20 SSD\Downloads\ETB_Database_Fundamentals-main\ETB_Database_Fundamentals-main\average_house_prices.csv'
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\average_house_prices.csv'
 WITH (
 		FIRSTROW=2,
@@ -129,71 +126,51 @@ WITH (
 
 
 --List all columns in tblHousingData;
-SELECT CensusYear,NumberOfUnits, VacancyRate 
+SELECT CensusYear,CountyName,NumberOfUnits, VacancyRate 
 FROM tblHousingData;
 
 
 
-/*
+
 SELECT CensusYear,NumberOfUnits, VacancyRate 
 FROM tblHousingData
 WHERE CountyName = 'Donegal';
-*/
+
 
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
 ORDER BY HouseValue ASC;
-/*
---list all columns in Pets
-SELECT * FROM Pets;
 
---list all columns in PetOwners
-
-SELECT * FROM PetOwners;
+SELECT * FROM tblNewHouseRegistrations
+WHERE YearQuarter = '2000Q1';
 
 
 
---display the pets, owned by Lee Jones
-Go 
-SELECT * FROM Pets
-WHERE PetOwnersID =100;
+Select  DISTINCT County FROM tblNewHouseRegistrations;
 
 
+SELECT TOP 2 ValueOfHouse,HouseType,CensusYear FROM tblHouseLoansApprovedAndPaid;
 
-Go 
-SELECT * FROM Pets
-WHERE PetOwnersID =100;
-
-
---display the different types of animals, veterinarians help
-Go 
-SELECT DISTINCT Species FROM Pets;
-
-
-
---display the FirstName LastName  of the top two staff members
-Go 
-SELECT TOP  2 FirstName,LastName FROM Staff;
-
-
---displaythe FirstName LastName & . Salary of  two staff members who earn the most.
-Go 
-SELECT TOP  2  FirstName,LastName , Salary  
-FROM Staff
-ORDER BY Salary DESC;
+SELECT TOP 20 ValueOfHouse,HouseType,CensusYear 
+FROM tblHouseLoansApprovedAndPaid
+ORDER BY ValueOfHouse  DESC;
 
 
 --Lee Jones has got a new rabbit named JoJo please add him to the system, JoJo's BOD is 2017-01-20
+/*
 Go 
 INSERT INTO Pets(PetName,Species, DOB, PetOwnersID)
 VALUES
 ('Jojo','Bunny','2017-01-20',100);
+*/
+INSERT INTO tblHousingByCountyAndElectrolDivision2011(ElectoralCode,ElectoralDivision,County,Bungalow_2011,Flat_2011)
+VALUES
+(2000,' 199 An Tir Nua','Monaghen North ',2000,40000);
 
 
---9. Micah has resigned, please remove the record from the staff table.
-Go 
-DELETE FROM Staff  WHERE StaffID=4;
-
+--The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
+DELETE FROM tblHousingByCountyAndElectrolDivision2011 WHERE ElectoralCode = 1830;
+/*
 
 --10 Oldist pet. 
 Go 
