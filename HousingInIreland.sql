@@ -21,14 +21,17 @@ CREATE TABLE tblAverageHousePrices(
 SurveyYear INT NOT NULL,
 Area varchar(30) NOT NULL,    
 HouseValue INT NOT NULL,
-CONSTRAINT PK_AverageHousePrices PRIMARY KEY(SurveyYear,HouseValue)
- 
-   
-    
- 
+CONSTRAINT PK_AverageHousePrices PRIMARY KEY(SurveyYear,HouseValue) 
    
 );
+CREATE TABLE tblFuelConsumption(
+SurveyYear INT NOT NULL,
+FuelType varchar(40) NOT NULL,
+KiloTonValue INT,
+CONSTRAINT PK_FuelConsumption PRIMARY KEY(SurveyYear,KiloTonValue,FuelType) 
 
+
+)
 
 
 CREATE TABLE tblHouseLoansApprovedAndPaid(
@@ -59,6 +62,15 @@ County varchar(20) NOT NULL,
 NumberOfUnits INT NOT NULL
 CONSTRAINT PK_NewHouseRegistrations PRIMARY KEY(YearQuarter,County)
 )
+
+BULK INSERT tblFuelConsumption
+FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\fuel_consumption.csv'
+WITH (
+		FIRSTROW=2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '\n',
+		BATCHSIZE=97
+);
 
 BULK INSERT tblHouseLoansApprovedAndPaid
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\house_loans_approved_and_paid.csv'
@@ -125,67 +137,60 @@ WITH (
 
 
 
---List all columns in tblHousingData;
+-- 1 List all columns in tblHousingData;
 SELECT CensusYear,CountyName,NumberOfUnits, VacancyRate 
 FROM tblHousingData;
 
 
 
-
+-- 2
 SELECT CensusYear,NumberOfUnits, VacancyRate 
 FROM tblHousingData
 WHERE CountyName = 'Donegal';
 
-
+--3
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
 ORDER BY HouseValue ASC;
-
+--4
 SELECT * FROM tblNewHouseRegistrations
 WHERE YearQuarter = '2000Q1';
 
 
-
+--5
 Select  DISTINCT County FROM tblNewHouseRegistrations;
 
-
+--6
 SELECT TOP 2 ValueOfHouse,HouseType,CensusYear FROM tblHouseLoansApprovedAndPaid;
-
+--7
 SELECT TOP 20 ValueOfHouse,HouseType,CensusYear 
 FROM tblHouseLoansApprovedAndPaid
 ORDER BY ValueOfHouse  DESC;
 
-
---Lee Jones has got a new rabbit named JoJo please add him to the system, JoJo's BOD is 2017-01-20
-/*
-Go 
-INSERT INTO Pets(PetName,Species, DOB, PetOwnersID)
-VALUES
-('Jojo','Bunny','2017-01-20',100);
-*/
+--8
 INSERT INTO tblHousingByCountyAndElectrolDivision2011(ElectoralCode,ElectoralDivision,County,Bungalow_2011,Flat_2011)
 VALUES
 (2000,' 199 An Tir Nua','Monaghen North ',2000,40000);
 
 
---The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
+--9 The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
 DELETE FROM tblHousingByCountyAndElectrolDivision2011 WHERE ElectoralCode = 1830;
-/*
 
---10 Oldist pet. 
-Go 
-SELECT TOP  1  PetName,DOB FROM Pets
-ORDER BY DOB  ASC;
-
-
-
-SELECT * FROM Staff
-WHERE Salary=31000.00 OR Salary=40000.00 AND Salary=41000.00;
+--10
+SELECT TOP 100 FuelType,SurveyYear FROM tblFuelConsumption
+ORDER by SurveyYear ASC;
+--11
+SELECT * FROM tblNewHouseRegistrations
+WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50; 
 
 ------------------------------------------------------------
 ------------------------------------------------------------
 --SELECT
-
+--12
+SELECT TOP 20 CountyName,  VacancyRate
+FROM tblHousingData
+ORDER BY VacancyRate DESC;
+/*
 --SELECT DISTINCT
 SELECT DISTINCT Salary FROM Staff;
 
