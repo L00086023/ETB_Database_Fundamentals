@@ -134,7 +134,7 @@ WITH (
 
 
 
-/*
+
 
 
 -- 1 List all columns in tblHousingData;
@@ -186,7 +186,7 @@ WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50;
 ------------------------------------------------------------
 ------------------------------------------------------------
 --SELECT
---12
+--12 The SELECT TOP clause is used to specify the number of records to return
 SELECT TOP 20 CountyName,  VacancyRate
 FROM tblHousingData
 ORDER BY VacancyRate DESC;
@@ -195,8 +195,8 @@ ORDER BY VacancyRate DESC;
 SELECT DISTINCT Area, HouseValue
 FROM tblAverageHousePrices;
 
---SELECT TOP
-SELECT TOP 4 Salary FROM Staff;
+ 
+
 
 -- 14
 SELECT SurveyYear,Area,HouseValue
@@ -247,7 +247,7 @@ SELECT *
 FROM tblAverageHousePrices
 WHERE HouseValue BETWEEN 150000 AND 250000
 
-*/
+
 
 /*22 The INSERT INTO statement is used to insert new records in a table. */
 
@@ -255,8 +255,8 @@ WHERE HouseValue BETWEEN 150000 AND 250000
 INSERT  INTO tblAverageHousePrices(SurveyYear,Area,HouseValue)
 VALUES(2021,' Dalkey',12000000);
 
-/*
---22 The UPDATE statement is used to modify the existing records in a table.
+
+--23 The UPDATE statement is used to modify the existing records in a table.
 UPDATE tblHousingData
 SET CountyCode = 'XX'
 WHERE CountyName ='Wexford';
