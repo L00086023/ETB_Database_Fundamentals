@@ -118,7 +118,7 @@ WITH (
 
 
 Go 
---INSERT INTO tblHousingData(CensusYear,CountyCode,NumberOfUnits, CountyName,VacancyRate)
+INSERT INTO tblHousingData(CensusYear,CountyCode,NumberOfUnits, CountyName,VacancyRate)
 BULK INSERT  tblHousingData
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\HousingData1.csv'
 WITH (
