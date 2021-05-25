@@ -134,7 +134,7 @@ WITH (
 
 
 
-
+/*
 
 
 -- 1 List all columns in tblHousingData;
@@ -190,65 +190,80 @@ WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50;
 SELECT TOP 20 CountyName,  VacancyRate
 FROM tblHousingData
 ORDER BY VacancyRate DESC;
-/*
---SELECT DISTINCT
-SELECT DISTINCT Salary FROM Staff;
+
+--13
+SELECT DISTINCT Area, HouseValue
+FROM tblAverageHousePrices;
 
 --SELECT TOP
 SELECT TOP 4 Salary FROM Staff;
 
---WHERE
-SELECT FirstName,LastName, ContactNumber
-FROM Staff
-WHERE Position ='Nurse';
+-- 14
+SELECT SurveyYear,Area,HouseValue
+FROM  tblAverageHousePrices
+WHERE HouseValue >400000
+ORDER BY HouseValue ASC;
+--15
+SELECT SurveyYear,HouseValue
+FROM  tblAverageHousePrices
+WHERE Area = 'Dublin' AND SurveyYear > 2000
+ORDER BY HouseValue ASC;
 
---AND
-SELECT FirstName,LastName, ContactNumber
-FROM Staff
-WHERE Position ='Nurse' AND Salary <41000.00;
+--16
+SELECT County,ElectoralDivision,Bungalow_2011
+FROM tblHousingByCountyAndElectrolDivision2011
+WHERE ElectoralDivision = '022 Portmagee' OR Bungalow_2011 >50;
 
---OR
-SELECT FirstName,LastName, ContactNumber ,Position
-FROM Staff
-WHERE Position ='Nurse' OR Position ='Vet';
 
--- NOT
-SELECT FirstName,LastName, ContactNumber ,Position
-FROM Staff
-WHERE NOT Position ='Nurse' AND NOT Position ='Vet';
+--17
+SELECT CensusYear,ValueOfHouse
+FROM tblHouseLoansApprovedAndPaid
+WHERE HouseType = 'New houses' AND NOT HouseType = 'Second-hand houses';
 
---ORDER BY
+
+--18
+SELECT * 
+
+FROM tblHousingData
+ORDER BY VacancyRate DESC;
+
+
+
+
+--19   SQL aliases are used to give each  column in the  table, a temporary name.
+SELECT County +',' AS CountyName,  NumberOfUnits AS [No of Units]
+FROM tblNewHouseRegistrations
+WHERE YearQuarter = '2000Q1' AND NOT County = 'All Counties'
+ORDER BY NumberOfUnits DESC;
+
+
+--20 The following SQL statement deletes all rows in the "tblNewHouseRegistrations" table, which satisfy the WHERE condition.
+DELETE FROM  tblNewHouseRegistrations
+WHERE County LIKE 'All Counties%';
+
+
+--21 The BETWEEN operator selects values within a given range
 SELECT *
-FROM Staff
-ORDER BY Salary DESC;
+FROM tblAverageHousePrices
+WHERE HouseValue BETWEEN 150000 AND 250000
+
+*/
+
+/*22 The INSERT INTO statement is used to insert new records in a table. */
 
 
---Alias
-SELECT FirstName+','+ LastName AS Name, ContactNumber AS [Phone Number]
-FROM Staff
-WHERE Position ='Nurse';
+INSERT  INTO tblAverageHousePrices(SurveyYear,Area,HouseValue)
+VALUES(2021,' Dalkey',12000000);
 
+/*
+--22 The UPDATE statement is used to modify the existing records in a table.
+UPDATE tblHousingData
+SET CountyCode = 'XX'
+WHERE CountyName ='Wexford';
 
---DELETE FROM table_name WHERE condition;
-
---LIKE & Wildcards
-SELECT * FROM Pets
-WHERE DOB LIKE '2017-01-%';
-
-
---BETWEEN 
-SELECT *
-FROM Staff 
-WHERE Salary BETWEEN 20000.00 AND 35000.00;
-
-
---INSERT INTO table_name (column1, column2, column3, ...)
---VALUES (value1, value2, value3, ...);
-
---UPDATE table_name
 --SET column1 = value1, column2 = value2, ...
 --WHERE condition;
-
+/*
 --SELECT *
 FROM Pets
 INNER JOIN PetOwners
