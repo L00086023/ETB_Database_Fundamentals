@@ -118,7 +118,6 @@ WITH (
 
 
 Go 
-INSERT INTO tblHousingData(CensusYear,CountyCode,NumberOfUnits, CountyName,VacancyRate)
 BULK INSERT  tblHousingData
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\HousingData1.csv'
 WITH (
@@ -131,10 +130,7 @@ WITH (
 
 
 
-
-
-
-
+/*
 
 
 -- 1 List all columns in tblHousingData;
@@ -261,13 +257,43 @@ UPDATE tblHousingData
 SET CountyCode = 'XX'
 WHERE CountyName ='Wexford';
 
+-- 24 Create View
+*/
+GO
+
+--24
+CREATE VIEW [HighestVacancyRate] AS
+SELECT CountyName,VacancyRate
+FROM tblHousingData
+WHERE VacancyRate >10
+
+
+GO
+--25 
+CREATE PROCEDURE SPSELECTMAXFUELTYPE
+AS
+SELECT DISTINCT FuelType  FROM tblFuelConsumption
+EXECUTE SPSELECTMAXFUELTYPE;
+
+ GO
+
+ CREATE FUNCTION AverageVacancyRate()
+ RETURNS AVG(HouseValue)
+/*
 --SET column1 = value1, column2 = value2, ...
 --WHERE condition;
-/*
+
 --SELECT *
 FROM Pets
 INNER JOIN PetOwners
 ON Pets.PetOwnersID = PetOwners.PetOwnersID;
+
+SELECT *
+FROM tblHousingData
+INNER JOIN 
+ON CountyCode.PK_HousingData = /
+
+
 
 SELECT *
 FROM Pets
