@@ -130,7 +130,6 @@ WITH (
 
 
 
-/*
 
 
 -- 1 List all columns in tblHousingData;
@@ -258,7 +257,7 @@ SET CountyCode = 'XX'
 WHERE CountyName ='Wexford';
 
 -- 24 Create View
-*/
+
 GO
 
 --24
@@ -269,6 +268,7 @@ WHERE VacancyRate >10
 
 
 GO
+
 --25 
 CREATE PROCEDURE SPSELECTMAXFUELTYPE
 AS
@@ -277,8 +277,8 @@ EXECUTE SPSELECTMAXFUELTYPE;
 
  GO
 
- CREATE FUNCTION AverageVacancyRate()
- RETURNS AVG(HouseValue)
+ --CREATE FUNCTION AverageVacancyRate()
+-- RETURNS AVG(HouseValue) /*This is incomplete. 15:37 27-05-21 */
 /*
 --SET column1 = value1, column2 = value2, ...
 --WHERE condition;
