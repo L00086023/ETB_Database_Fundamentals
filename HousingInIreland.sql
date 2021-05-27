@@ -130,50 +130,80 @@ WITH (
 
 
 
-
+/*
 
 -- 1 List all columns in tblHousingData;
 SELECT CensusYear,CountyName,NumberOfUnits, VacancyRate 
 FROM tblHousingData;
-
+*/
+/*
+GO
 
 
 -- 2
 SELECT CensusYear,NumberOfUnits, VacancyRate 
 FROM tblHousingData
 WHERE CountyName = 'Donegal';
+*/
+GO
+/*
 
 --3
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
 ORDER BY HouseValue ASC;
+*/
+GO
+/*
 --4
 SELECT * FROM tblNewHouseRegistrations
 WHERE YearQuarter = '2000Q1';
-
-
+*/
+GO
+/*
 --5
 Select  DISTINCT County FROM tblNewHouseRegistrations;
-
+*/
+GO
+/*
 --6
 SELECT TOP 2 ValueOfHouse,HouseType,CensusYear FROM tblHouseLoansApprovedAndPaid;
+*/
+GO
+/*
 --7
 SELECT TOP 20 ValueOfHouse,HouseType,CensusYear 
 FROM tblHouseLoansApprovedAndPaid
 ORDER BY ValueOfHouse  DESC;
 
+*/
+GO
+/*
 --8
 INSERT INTO tblHousingByCountyAndElectrolDivision2011(ElectoralCode,ElectoralDivision,County,Bungalow_2011,Flat_2011)
 VALUES
-(2000,' 199 An Tir Nua','Monaghen North ',2000,40000);
+(1831,' 199 Does not Exist','Monaghen North ',2000,40000);
 
+*/
+--GO
 
+/*
 --9 The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
+*/
+/*
 DELETE FROM tblHousingByCountyAndElectrolDivision2011 WHERE ElectoralCode = 1830;
+*/
+/*
+GO
+
 
 --10
+*/
+/*
 SELECT TOP 100 FuelType,SurveyYear FROM tblFuelConsumption
 ORDER by SurveyYear ASC;
+*/
+/*
 --11
 SELECT * FROM tblNewHouseRegistrations
 WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50; 
@@ -185,13 +215,15 @@ WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50;
 SELECT TOP 20 CountyName,  VacancyRate
 FROM tblHousingData
 ORDER BY VacancyRate DESC;
-
+*/
+/*
 --13
 SELECT DISTINCT Area, HouseValue
 FROM tblAverageHousePrices;
 
  
-
+ */
+ /*
 
 -- 14
 SELECT SurveyYear,Area,HouseValue
@@ -258,16 +290,21 @@ WHERE CountyName ='Wexford';
 
 -- 24 Create View
 
+/*
 GO
-
+*/
+/*
 --24
 CREATE VIEW [HighestVacancyRate] AS
 SELECT CountyName,VacancyRate
 FROM tblHousingData
 WHERE VacancyRate >10
 
-
+*/
 GO
+
+
+*/
 
 --25 
 CREATE PROCEDURE SPSELECTMAXFUELTYPE
@@ -276,9 +313,11 @@ SELECT DISTINCT FuelType  FROM tblFuelConsumption
 EXECUTE SPSELECTMAXFUELTYPE;
 
  GO
-
+ 
+ /*
  --CREATE FUNCTION AverageVacancyRate()
 -- RETURNS AVG(HouseValue) /*This is incomplete. 15:37 27-05-21 */
+*/
 /*
 --SET column1 = value1, column2 = value2, ...
 --WHERE condition;
@@ -287,26 +326,30 @@ EXECUTE SPSELECTMAXFUELTYPE;
 FROM Pets
 INNER JOIN PetOwners
 ON Pets.PetOwnersID = PetOwners.PetOwnersID;
-
+*/
+/*
 SELECT *
 FROM tblHousingData
 INNER JOIN 
 ON CountyCode.PK_HousingData = /
 
 
-
+*/
+/*
 SELECT *
 FROM Pets
 LEFT JOIN PetOwners
 ON Pets.PetOwnersID = PetOwners.PetOwnersID;
-
+*/
+/*
 SELECT *
 FROM Pets
 RIGHT  JOIN PetOwners
 ON Pets.PetOwnersID = PetOwners.PetOwnersID;
 Select * 
 FROM Pets;
-
+*/
+/*
 --CREATE TABLE Genres(
 --GenreID   int IDENTITY(1,1) NOT NULL Primary Key,
 --Genre nvarchar NOT NULL
@@ -316,5 +359,7 @@ CREATE TABLE Medication(
 MedicationID   int IDENTITY(1,1) NOT NULL Primary Key,
 Medication nvarchar NOT NULL
 );
+*/
+/*
 SELECT * FROM  sys.tables;
 */
