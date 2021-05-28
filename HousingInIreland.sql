@@ -62,6 +62,11 @@ County varchar(20) NOT NULL,
 NumberOfUnits INT NOT NULL
 CONSTRAINT PK_NewHouseRegistrations PRIMARY KEY(YearQuarter,County)
 )
+--DROP TABLE CountyCodes 
+CREATE TABLE CountyCodes(
+CountyCode varchar(2)Primary Key NOT NULL,
+CountyName varchar(30)NOT NULL
+)
 
 BULK INSERT tblFuelConsumption
 FROM 'C:\Users\Client 9.20 SSD\OneDrive\Desktop\Database Fundamentals\ETB_Database_Fundamentals-main\fuel_consumption.csv'
@@ -126,8 +131,21 @@ WITH (
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=513
 );
-	
+/*
+GO	
+CREATE OR ALTER FUNCTION HousePriceByArea(@Area varchar(30))
+RETURNS TABLE
+AS 
+RETURN
+SELECT  AVG (HouseValue) AS Average_Value FROM tblAverageHousePrices
+WHERE tblAverageHousePrices.Area =@Area AND tblAverageHousePrices.SurveyYear = '2000'
+GO
+SELECT * FROM HousePriceByArea('Galway');
+*/
+GO
 
+--SELECT * FROM HousePriceByArea('Galway');
+GO
 
 
 /*
@@ -185,7 +203,7 @@ VALUES
 (1831,' 199 Does not Exist','Monaghen North ',2000,40000);
 
 */
---GO
+GO
 
 /*
 --9 The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
@@ -193,12 +211,12 @@ VALUES
 /*
 DELETE FROM tblHousingByCountyAndElectrolDivision2011 WHERE ElectoralCode = 1830;
 */
-/*
+
 GO
 
 
 --10
-*/
+
 /*
 SELECT TOP 100 FuelType,SurveyYear FROM tblFuelConsumption
 ORDER by SurveyYear ASC;
@@ -290,9 +308,10 @@ WHERE CountyName ='Wexford';
 
 -- 24 Create View
 
+*/
 /*
 GO
-*/
+
 /*
 --24
 CREATE VIEW [HighestVacancyRate] AS
@@ -300,19 +319,22 @@ SELECT CountyName,VacancyRate
 FROM tblHousingData
 WHERE VacancyRate >10
 
-*/
+
 GO
 
 
 */
 
 --25 
+/*
 CREATE PROCEDURE SPSELECTMAXFUELTYPE
 AS
 SELECT DISTINCT FuelType  FROM tblFuelConsumption
 EXECUTE SPSELECTMAXFUELTYPE;
-
+*/
+/*
  GO
+ 
  
  /*
  --CREATE FUNCTION AverageVacancyRate()
@@ -321,7 +343,8 @@ EXECUTE SPSELECTMAXFUELTYPE;
 /*
 --SET column1 = value1, column2 = value2, ...
 --WHERE condition;
-
+*/
+/*
 --SELECT *
 FROM Pets
 INNER JOIN PetOwners
@@ -363,3 +386,18 @@ Medication nvarchar NOT NULL
 /*
 SELECT * FROM  sys.tables;
 */
+*/
+*/
+/*
+CREATE FUNCTION HousePriceByArea(@Area varchar(30))
+RETURNS TABLE
+AS
+RETURN
+SELECT * FROM tblAverageHousePrices
+WHERE tblAverageHousePrices.Area =@Area;
+SELECT * FROM HousePriceByArea('Galway');
+GO
+*/
+
+CREATE CLUSTERED INDEX tblHousingDataIndex
+ON  tblHousingData(CensusYear ASC);
