@@ -6,7 +6,7 @@ GO
 USE HousingInIreland;
 
 
-
+DROP TABLE tblHousingByCountyAndElectrolDivision2011
 CREATE TABLE tblHousingByCountyAndElectrolDivision2011(
    
    ElectoralCode INT  PRIMARY KEY,
@@ -16,7 +16,7 @@ CREATE TABLE tblHousingByCountyAndElectrolDivision2011(
    Flat_2011 INT NOT NULL
    
 );
-
+DROP TABLE  tblAverageHousePrices
 CREATE TABLE tblAverageHousePrices(
 SurveyYear INT NOT NULL,
 Area varchar(30) NOT NULL,    
@@ -24,6 +24,7 @@ HouseValue INT NOT NULL,
 CONSTRAINT PK_AverageHousePrices PRIMARY KEY(SurveyYear,HouseValue) 
    
 );
+DROP TABLE tblFuelConsumption
 CREATE TABLE tblFuelConsumption(
 SurveyYear INT NOT NULL,
 FuelType varchar(40) NOT NULL,
@@ -31,9 +32,9 @@ KiloTonValue INT,
 CONSTRAINT PK_FuelConsumption PRIMARY KEY(SurveyYear,KiloTonValue,FuelType) 
 
 
-)
+);
 
-
+DROP  TABLE tblHouseLoansApprovedAndPaid
 CREATE TABLE tblHouseLoansApprovedAndPaid(
 
 
@@ -45,6 +46,7 @@ ValueOfHouse MONEY NOT NULL,
 CONSTRAINT PK_HouseLoansApprovedAndPaid PRIMARY KEY(CensusYear,ValueOfHouse)
 
 );
+DROP  TABLE tblHousingData
 CREATE TABLE tblHousingData(
 CensusYear INT  NOT NULL,
 CountyCode varchar(2),
@@ -54,6 +56,7 @@ VacancyRate DECIMAL NOT NULL
 CONSTRAINT PK_HousingData PRIMARY KEY(CensusYear,NumberOfUnits)
 
 );
+DROP TABLE tblNewHouseRegistrations
 CREATE TABLE  tblNewHouseRegistrations(
 
 YearQuarter varchar(10) NOT NULL,
@@ -62,7 +65,7 @@ County varchar(20) NOT NULL,
 NumberOfUnits INT NOT NULL
 CONSTRAINT PK_NewHouseRegistrations PRIMARY KEY(YearQuarter,County)
 )
---DROP TABLE CountyCodes 
+DROP TABLE CountyCodes 
 CREATE TABLE CountyCodes(
 CountyCode varchar(2)Primary Key NOT NULL,
 CountyName varchar(30)NOT NULL
@@ -74,7 +77,7 @@ WITH (
 		FIRSTROW=2,
 		FIELDTERMINATOR = ',',
 		ROWTERMINATOR = '\n',
-		BATCHSIZE=97
+		BATCHSIZE=94
 );
 
 BULK INSERT tblHouseLoansApprovedAndPaid
@@ -131,8 +134,9 @@ WITH (
 		ROWTERMINATOR = '\n',
 		BATCHSIZE=513
 );
+
+GO
 /*
-GO	
 CREATE OR ALTER FUNCTION HousePriceByArea(@Area varchar(30))
 RETURNS TABLE
 AS 
@@ -148,24 +152,24 @@ GO
 GO
 
 
-/*
 
+/*
 -- 1 List all columns in tblHousingData;
 SELECT CensusYear,CountyName,NumberOfUnits, VacancyRate 
 FROM tblHousingData;
+
 */
-/*
 GO
 
-
+/*
 -- 2
 SELECT CensusYear,NumberOfUnits, VacancyRate 
 FROM tblHousingData
 WHERE CountyName = 'Donegal';
 */
 GO
-/*
 
+/*
 --3
 SELECT SurveyYear,Area,HouseValue 
 FROM tblAverageHousePrices
@@ -193,8 +197,8 @@ GO
 SELECT TOP 20 ValueOfHouse,HouseType,CensusYear 
 FROM tblHouseLoansApprovedAndPaid
 ORDER BY ValueOfHouse  DESC;
-
 */
+
 GO
 /*
 --8
@@ -207,22 +211,23 @@ GO
 
 /*
 --9 The Electoral Division: 022 Portmagee needs to be removed from the tblHousingByCountyAndElectrolDivision2011 table
+
 */
-/*
 DELETE FROM tblHousingByCountyAndElectrolDivision2011 WHERE ElectoralCode = 1830;
-*/
+
 
 GO
-
+/*
 
 --10
 
-/*
+
 SELECT TOP 100 FuelType,SurveyYear FROM tblFuelConsumption
 ORDER by SurveyYear ASC;
 */
-/*
+
 --11
+/*
 SELECT * FROM tblNewHouseRegistrations
 WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50; 
 
@@ -233,17 +238,19 @@ WHERE County = 'Donegal' OR YearQuarter = '2018Q1' AND NumberOfUnits >50;
 SELECT TOP 20 CountyName,  VacancyRate
 FROM tblHousingData
 ORDER BY VacancyRate DESC;
+
 */
-/*
 --13
+/*
 SELECT DISTINCT Area, HouseValue
 FROM tblAverageHousePrices;
 
- 
  */
- /*
+ 
+ 
 
 -- 14
+/*
 SELECT SurveyYear,Area,HouseValue
 FROM  tblAverageHousePrices
 WHERE HouseValue >400000
@@ -292,10 +299,10 @@ SELECT *
 FROM tblAverageHousePrices
 WHERE HouseValue BETWEEN 150000 AND 250000
 
-
+*/
 
 /*22 The INSERT INTO statement is used to insert new records in a table. */
-
+/*
 
 INSERT  INTO tblAverageHousePrices(SurveyYear,Area,HouseValue)
 VALUES(2021,' Dalkey',12000000);
@@ -309,28 +316,32 @@ WHERE CountyName ='Wexford';
 -- 24 Create View
 
 */
-/*
+
 GO
 
-/*
+
 --24
+/*
 CREATE VIEW [HighestVacancyRate] AS
 SELECT CountyName,VacancyRate
 FROM tblHousingData
 WHERE VacancyRate >10
-
+*/
 
 GO
 
 
-*/
+
 
 --25 
+
+
 /*
-CREATE PROCEDURE SPSELECTMAXFUELTYPE
+CREATE PROCEDURE SPLISTFUELTYPES
 AS
-SELECT DISTINCT FuelType  FROM tblFuelConsumption
-EXECUTE SPSELECTMAXFUELTYPE;
+SELECT  DISTINCT FuelType FROM tblFuelConsumption;
+EXECUTE SPLISTFUELTYPES;
+GO
 */
 /*
  GO
@@ -387,7 +398,7 @@ Medication nvarchar NOT NULL
 SELECT * FROM  sys.tables;
 */
 */
-*/
+
 /*
 CREATE FUNCTION HousePriceByArea(@Area varchar(30))
 RETURNS TABLE
@@ -398,6 +409,20 @@ WHERE tblAverageHousePrices.Area =@Area;
 SELECT * FROM HousePriceByArea('Galway');
 GO
 */
-
+/*
+DROP INDEX tblHousingDataIndex ON tblHousingData;
 CREATE CLUSTERED INDEX tblHousingDataIndex
 ON  tblHousingData(CensusYear ASC);
+
+EXECUTE sp_helpindex tblHousingData;
+*/
+--EXECUTE SP_HELPINDEX tblHousingData;
+---EXECUTE tblHousingDataIndex;
+--DROP INDEX tblFuelConsumptionIndex
+--CREATE CLUSTERED INDEX tblFuelConsumptionIndex
+--ON tblFuelConsumption(SurveyYear ASC);
+--ON  tblHousingData(CensusYear ASC);
+DROP INDEX tblFuelConsumptionIndex ON tblFuelConsumption
+CREATE NONCLUSTERED INDEX tblFuelConsumptionIndex
+ON tblFuelConsumption(KiloTonValue ASC)
+EXECUTE sp_helpindex t blFuelConsumption;
